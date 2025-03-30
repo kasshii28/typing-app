@@ -1,4 +1,4 @@
-export default function Javascript() {
+export default function Javascript(){
   return (
     <div>JS</div>
   )
