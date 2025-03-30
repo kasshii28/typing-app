@@ -1,9 +1,22 @@
 import { Fragment } from "react";
+import { NavCourse } from "./components/NavCourse/NavCourse";
+import { CourseDescriptions } from "./constants/courseDescriptions/courseDescriptions";
 
 export default function Home() {
   return (
     <Fragment>
-      Home
+      <div className="grid grid-cols-3 gap-4 p-4">
+        {CourseDescriptions.map((course) => {
+          return Object.entries(course).map(([key, value]) => (
+            <NavCourse
+              key={key}
+              title={value.title}
+              content={value.content}
+              url={value.url}
+            />
+          ));
+        })}
+      </div>
     </Fragment>
   );
 }
