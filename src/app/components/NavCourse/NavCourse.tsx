@@ -8,12 +8,13 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FC } from "react";
 
-export const NavCourse = ({
+export const NavCourse: FC<NavCourseProps> = ({
   title,
   content,
   url
-}: NavCourseProps) => {
+}) => {
   return (
     <Link href={url}>
       <Card>
