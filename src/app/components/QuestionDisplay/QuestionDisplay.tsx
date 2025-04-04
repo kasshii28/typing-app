@@ -5,7 +5,6 @@ import clsx from "clsx"
 export const QuestionDisplay: FC<QuestionDisplayProps> = ({
   question,
   currentPosition,
-  className = "",
 }) => {
   return (
     <div className='
