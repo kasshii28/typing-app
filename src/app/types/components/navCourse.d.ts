@@ -1,5 +1,5 @@
 export interface NavCourseProps {
-  title: string;
-  content: string;
-  url: string;
+	title: string;
+	content: string;
+	url: string;
 }

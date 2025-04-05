@@ -1,8 +1,8 @@
-import { handleKeyDownProps } from '@/app/types/handlers/handleKeyDown.d';
+import type { handleKeyDownProps } from "@/app/types/handlers/handleKeyDown.d";
 
 /**
  * タイピングゲームのキー入力を処理する関数
- * 
+ *
  * @param {Object} props - 関数の引数オブジェクト
  * @param {KeyboardEvent} props.e - キーボードイベント
  * @param {Questions} props.Questions - 問題のリスト
@@ -14,25 +14,28 @@ import { handleKeyDownProps } from '@/app/types/handlers/handleKeyDown.d';
  */
 
 export const handleKeyDown = ({
-    e,
-    Questions,
-    currentQuestionIndex,
-    setCurrentQuestionIndex,
-    currentPostion,
-    setCurrentPosition,
-    setIsFinished
+	e,
+	Questions,
+	currentQuestionIndex,
+	setCurrentQuestionIndex,
+	currentPostion,
+	setCurrentPosition,
+	setIsFinished,
 }: handleKeyDownProps) => {
-    const currentQuestion = Questions[currentQuestionIndex]
-    if(e.key.toLowerCase() === currentQuestion.answer[currentPostion]?.toLocaleLowerCase()) {
-      setCurrentPosition(prev => prev + 1)
-    }
+	const currentQuestion = Questions[currentQuestionIndex];
+	if (
+		e.key.toLowerCase() ===
+		currentQuestion.answer[currentPostion]?.toLocaleLowerCase()
+	) {
+		setCurrentPosition((prev) => prev + 1);
+	}
 
-    if(currentPostion === currentQuestion.answer.length - 1) {
-      if(currentQuestionIndex === Questions.length - 1) {
-        setIsFinished(true)
-      } else {
-        setCurrentPosition(0)
-        setCurrentQuestionIndex(prev => prev + 1)
-      }
-    }
-  }
+	if (currentPostion === currentQuestion.answer.length - 1) {
+		if (currentQuestionIndex === Questions.length - 1) {
+			setIsFinished(true);
+		} else {
+			setCurrentPosition(0);
+			setCurrentQuestionIndex((prev) => prev + 1);
+		}
+	}
+};
